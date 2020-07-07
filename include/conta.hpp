@@ -3,12 +3,15 @@
 
 #include <iostream>
 #include <string>
+#include "cliente.hpp"
+#include "agencia.hpp"
 
 class Conta{
 
 public:
 	int conta;
-	std::string titular;
+	Cliente titular;
+	Agencia ag;
 	float saldo;
 
 	void saque(float valor);

@@ -5,24 +5,32 @@ int main(int argc, char* argv[]){
 	Conta c;
 
 	c.conta = 52348;
-	c.titular = "Fulano de Tal";
+	c.ag.nome = "Banco Itau";
+	c.ag.numero_ag = 1089;
+	c.titular.nome = "Fulano de Tal";
+	c.titular.cpf = "154.784.854-86";
 	c.saldo = 1024.45;
 
 	Conta c2;
 
 	c2.conta = 52784;
-	c2.titular = "Sicrano";
-	c2.saldo = 845.80;
+	c2.ag.nome = "Banco Santander";
+	c2.ag.numero_ag = 7852;
+	c2.titular.nome = "Sicrano";
+	c2.titular.cpf = "178.452.785-75";
+	c2.saldo = 3225.97;
 
 	std::cout << "Numero da conta: " << c.conta << std::endl;
-	std::cout << "Titular da conta: " << c.titular << std::endl;
+	std::cout << "Agencia: " << c.ag.numero_ag << " - " << c.ag.nome << std::endl;
+	std::cout << "Titular da conta: " << c.titular.nome << " - " << c.titular.cpf << std::endl;
 	std::cout << "Saldo atual: R$ " << c.saldo << std::endl;
 
 	std::cout << std::endl;
 
-	std::cout << "Numero da conta 2: " << c2.conta << std::endl;
-	std::cout << "Titular da conta 2: " << c2.titular << std::endl;
-	std::cout << "Saldo atual 2: R$ " << c2.saldo << std::endl;
+	std::cout << "Numero da conta: " << c2.conta << std::endl;
+	std::cout << "Agencia: " << c2.ag.numero_ag << " - " << c2.ag.nome << std::endl;
+	std::cout << "Titular da conta: " << c2.titular.nome << " - " << c2.titular.cpf << std::endl;
+	std::cout << "Saldo atual: R$ " << c2.saldo << std::endl;
 
 	std::cout << std::endl;
 
