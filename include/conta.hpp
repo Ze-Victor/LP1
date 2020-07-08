@@ -14,6 +14,12 @@ public:
 	Agencia ag;
 	float saldo;
 
+	static int qnt_contas;
+
+	Conta();
+	Conta(Cliente titular);
+	~Conta();
+
 	void saque(float valor);
 	void deposito(float valor);
 	void transferencia(float valor, Conta& c);

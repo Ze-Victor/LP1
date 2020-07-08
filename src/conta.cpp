@@ -1,5 +1,17 @@
 #include "../include/conta.hpp"
 
+int Conta::qnt_contas;
+
+Conta::Conta(){
+	this->qnt_contas+=1;
+};
+Conta::Conta(Cliente titular){
+	this->titular = titular;
+	this->qnt_contas+=1;
+};
+Conta::~Conta(){
+
+};
 void Conta::saque(float valor){
 	if(valor > saldo){
 		std::cout << "Saldo insuficiente!" << std::endl;
