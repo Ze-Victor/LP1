@@ -1,75 +1,42 @@
 #include "../include/conta.hpp"
 #include "../include/cliente.hpp"
 #include "../include/agencia.hpp"
-#include "../include/carro.hpp"
-#include "../include/motor.hpp"
+#include "../include/clientepj.hpp"
+#include "../include/Fila.hpp"
 
 int main(int argc, char* argv[]){
 
-	Conta c;
-	Cliente cli;
+	Cliente cl1("Lyz Maria", "078.352.785-52");
+    Cliente cl2("Annyzia Maria", "078.352.785-52");
+    Cliente cl3("Genicleide", "078.352.785-52");
+    Cliente cl4("José Antonio", "078.352.785-52");
 
-	c.conta = 52348;
-	c.ag.nome = "Banco Itau";
-	c.ag.numero_ag = 1089;
-	c.titular.nome = "Fulano de Tal";
-	c.titular.cpf = "154.784.854-86";
-	c.saldo = 1024.45;
+    ClientePJ cpj1("Baby beauty", "078.352.785-52");
+    ClientePJ cpj2("Lojas baby", "078.352.785-52");
+    ClientePJ cpj3("Lojas Lyz", "078.352.785-52");
 
-	Conta c2;
+    Fila <Cliente> fila1(4);
 
-	c2.conta = 52784;
-	c2.ag.nome = "Banco Santander";
-	c2.ag.numero_ag = 7852;
-	c2.titular.nome = "Sicrano";
-	c2.titular.cpf = "178.452.785-75";
-	c2.saldo = 3225.97;
+    fila1.push(cl1);
+    fila1.push(cl2);
+    fila1.push(cl3);
+    fila1.push(cl4);
 
-	std::cout << "Numero da conta: " << c.conta << std::endl;
-	std::cout << "Agencia: " << c.ag.numero_ag << " - " << c.ag.nome << std::endl;
-	std::cout << "Titular da conta: " << c.titular.nome << " - " << c.titular.cpf << std::endl;
-	std::cout << "Saldo atual: R$ " << c.saldo << std::endl;
+    std::cout << fila1.size() << std::endl;
+    std::cout << fila1.empty() << std::endl;
+    std::cout << fila1.front().nome << std::endl;
+    std::cout << fila1.back().nome << std::endl;
 
-	std::cout << std::endl;
+    fila1.pop();
 
-	std::cout << "Numero da conta: " << c2.conta << std::endl;
-	std::cout << "Agencia: " << c2.ag.numero_ag << " - " << c2.ag.nome << std::endl;
-	std::cout << "Titular da conta: " << c2.titular.nome << " - " << c2.titular.cpf << std::endl;
-	std::cout << "Saldo atual: R$ " << c2.saldo << std::endl;
+    std::cout << fila1.back().nome << std::endl;
 
-	std::cout << std::endl;
-
-	c.deposito(120.55);
-	c.saque(500);
-
-	c.transferencia(200, c2);
-
-	std::cout << "Saldo atual conta 1: R$ " << c.saldo << std::endl;
-	std::cout << "Saldo atual conta 2: R$ " << c2.saldo << std::endl;
-
-	std::cout << "Quantidade de contas: " << c.qnt_contas << std::endl;
-	std::cout << "Quantidade de clientes: " << cli.qnt_clientes << std::endl;
-
-	std::cout << "----------------------------------------------" << std::endl;
-
-	Carro cr;
-    cr.tipo = "Sedan";
-    cr.numPortas = 4;
-    cr.placa = "XYZ-0102";
-
-    std::cout << "Tipo do carro: " << cr.tipo << std::endl;
-    std::cout << "Quantidade de portas: " << cr.numPortas << std::endl;
-    std::cout << "Placa do carro: " << cr.placa << std::endl;
-    std::cout << "A cor do carro é: " << cr.cor << std::endl;
-    cr.ligaCarro();
-    cr.acelera(50);
-    std::cout << "A velocidade atual é: " << cr.velocidade << "KM/H" << std::endl;
-    cr.freia (20);
-    std::cout << "A velocidade atual é: " << cr.velocidade << "KM/H" << std::endl;
-    std::cout << "Quantidade de Carros: " << cr.qnt_carros << std::endl;
+    Fila <ClientePJ> fila2(3);
 
 
-
+    fila2.push(cpj1);
+    fila2.push(cpj2);
+    fila2.push(cpj3);
 
 
 	return 0;

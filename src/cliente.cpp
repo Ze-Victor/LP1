@@ -2,7 +2,12 @@
 
 int Cliente::qnt_clientes;
 
-Cliente::Cliente() : nome("Fulano de Tal"), cpf("154.785.457-85"){
+Cliente::Cliente(std::string nome, std::string cpf){
+	this->nome = nome;
+	this->cpf = cpf;
+	this->qnt_clientes+=1;
+};
+Cliente::Cliente(){
 	this->qnt_clientes+=1;
 };
 Cliente::~Cliente(){

@@ -11,6 +11,7 @@ public:
 	static int qnt_clientes;
 
 	Cliente();
+	Cliente(std::string nome, std::string cpf);
 	~Cliente();
 };
 
