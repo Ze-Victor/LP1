@@ -3,12 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include "cliente.hpp"
 
-class ClientePJ{
-
-private:
-	std::string razao_social;
-	std::string cnpj;
+class ClientePJ : protected Cliente{
 
 public:
 	ClientePJ();

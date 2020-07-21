@@ -2,8 +2,8 @@
 
 ClientePJ::ClientePJ(std::string razao_social, std::string cnpj)
 {
-	this->razao_social = razao_social;
-	this->cnpj = cnpj;
+	this->nome = razao_social;
+	this->cpf = cnpj;
 }
 ClientePJ::ClientePJ()
 {
@@ -11,17 +11,17 @@ ClientePJ::ClientePJ()
 }
 void ClientePJ::setRazao(std::string razao_social)
 {
-	this->razao_social = razao_social;
+	this->nome = razao_social;
 }
 std::string ClientePJ::getRazao()
 {
-	return razao_social;
+	return this->nome;
 }
 void ClientePJ::setCNPJ(std::string cnpj)
 {
-	this->cnpj = cnpj;
+	this->cpf = cnpj;
 }
 std::string ClientePJ::getCNPJ()
 {
-	return cnpj;
+	return this->cpf;
 }
